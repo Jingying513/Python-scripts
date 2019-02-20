@@ -1,0 +1,55 @@
+reset
+
+set yrange[*:*]
+set xrange[0:*]
+
+#set cbrange [1:8]
+#set cbtics ('' 50, '' 40, '' 30, '' 20, '' 10, '' 0)
+#set cbtics rotate by 90 left
+
+unset key
+unset colorbox
+#set key box width 1 height 1 opaque
+#set key top left
+#set key font "Arial,12"
+set tics font "Arial,12"
+#set ylabel "Average Global warmnig potential(kg CO_2 eq)"
+set ylabel "Metal-ligand dissociation energy (kWh/t_{CO_2})" offset -0.4,0,0
+set xlabel font "Arial,12" 
+set xlabel "Parasitic Energy (kWh/t_{CO_2})"
+#set xlabel "High solvent loss"
+#set xlabel "Low solvent loss"
+set ylabel font "Arial,12" 
+#set logscale x 10
+
+plot 'dissociation.dat' u 2:3:4 with points pt 7 ps 2 lt palett,'' u 2:3:4 with points pt 6 ps 2 lt 8 notitle
+
+set ylabel "Average Global warmnig potential(kg CO_2 eq)"
+plot 'PE(revise).dat' u 2:6:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:6:22 with points pt 6 ps 2 lt 8 notitle
+
+set ylabel "Average Rource depletion - fossil fuels potential (MJ surplus)" 
+plot 'PE(revise).dat' u 2:11:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:11:22 with points pt 6 ps 2 lt 8 notitle
+
+set ylabel "Average Respiratory effects potential (kg PM2.5 eq)" 
+plot 'PE(revise).dat' u 2:12:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:12:22 with points pt 6 ps 2 lt 8 notitle
+
+set ylabel "Average Potochemical ozone formation potential (kg O_3 eq)" 
+plot 'PE(revise).dat' u 2:10:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:10:22 with points pt 6 ps 2 lt 8 notitle
+
+set ylabel "Average Ozone Depletion potential (kg CFC^{-11} eq)"
+plot 'PE(revise).dat' u 2:9:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:9:22 with points pt 6 ps 2 lt 8 notitle
+
+set ylabel "Average Human Health - non-carcinogenics potential (CTUh)"
+plot 'PE(revise).dat' u 2:8:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:8:22 with points pt 6 ps 2 lt 8 notitle
+
+set ylabel "Average Human Health - carcinogenics potential (CTUh)"
+plot 'PE(revise).dat' u 2:7:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:7:22 with points pt 6 ps 2 lt 8 notitle
+ 
+set ylabel "Average Eutrophication potential (kg N eq)"
+plot 'PE(revise).dat' u 2:5:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:5:22 with points pt 6 ps 2 lt 8 notitle
+
+set ylabel "Average Ecotoxicity potential (CTUe)"
+plot 'PE(revise).dat' u 2:4:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:4:22 with points pt 6 ps 2 lt 8 notitle
+
+set ylabel "Average Acidification potential(kg SO_2 eq)"
+plot 'PE(revise).dat' u 2:3:22 with points pt 7 ps 2 lt palett title "MOFs synthesized with different solvent loss",'' u 2:3:22 with points pt 6 ps 2 lt 8 notitle

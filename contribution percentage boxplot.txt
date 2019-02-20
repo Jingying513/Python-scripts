@@ -1,0 +1,26 @@
+reset
+set style fill solid 0.3 border 0
+set style boxplot outliers pointtype 5
+set style data boxplot
+set boxwidth  0.05
+set pointsize 0.1
+
+unset key
+set border 2
+set xtics('AP' 1.1, 'EP' 1.2, 'EUP' 1.3, 'GWP' 1.4, 'HHC' 1.5, 'HHN' 1.6,  'ODP' 1.7,  'POFP' 1.8, 'RDP' 1.9, 'REP' 2.0) scale 0.0 
+set ytics nomirror
+set yrange [*:*]
+set xrange [1:2.1] 
+set xtics nomirror
+set xtics font "Calibri,12"
+set ytics font "Calibri,12"
+set grid ytics
+
+set ylabel "Contribution from parasitic energy (%)" font "Calibri,12"
+plot 'contribution_percentage.dat' using (1.1):2:xticlabels(1) t "EP" lt 8 lw 2, '' u (1.2):3 t "EUP" lt 8 lw 2, '' u (1.3):4 t "GWP" lt 10 lw 2, '' u (1.4):5 t "EP" lt 8 lw 2, '' u (1.5):6 t "EP" lt 8 lw 2, '' u (1.6):7 t "EP" lt 8 lw 2, '' u (1.7):8 t "EP" lt 10 lw 2, '' u (1.8):9 t "EP" lt 8 lw 2 pt 3, '' u (1.9):10 t "EP" lt 10 lw 2, '' u (2.0):11 t "EP" lt 8 lw 2
+
+set ylabel "Contribution from solvent (%)" font "Calibri,12"
+plot 'solvent_contribution_percentage.dat' using (1.1):2:xticlabels(1) t "EP" lt 8 lw 2, '' u (1.2):3 t "EUP" lt 8 lw 2, '' u (1.3):4 t "GWP" lt 10 lw 2, '' u (1.4):5 t "EP" lt 8 lw 2, '' u (1.5):6 t "EP" lt 8 lw 2, '' u (1.6):7 t "EP" lt 8 lw 2, '' u (1.7):8 t "EP" lt 10 lw 2, '' u (1.8):9 t "EP" lt 8 lw 2 pt 3, '' u (1.9):10 t "EP" lt 10 lw 2, '' u (2.0):11 t "EP" lt 8 lw 2
+
+set ylabel "Contribution from solvent (%)" font "Calibri,12"
+plot 'solvent_contribution_percentage.dat' using (1.1):12:xticlabels(1) t "EP" lt 8 lw 2, '' u (1.2):13 t "EUP" lt 8 lw 2, '' u (1.3):14 t "GWP" lt 10 lw 2, '' u (1.4):15 t "EP" lt 8 lw 2, '' u (1.5):16 t "EP" lt 8 lw 2, '' u (1.6):17 t "EP" lt 8 lw 2, '' u (1.7):18 t "EP" lt 10 lw 2, '' u (1.8):19 t "EP" lt 8 lw 2 pt 3, '' u (1.9):20 t "EP" lt 10 lw 2, '' u (2.0):21 t "EP" lt 8 lw 2
