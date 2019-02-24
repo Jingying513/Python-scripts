@@ -1,0 +1,116 @@
+reset
+
+set yrange[*:*]
+set xrange[0:1.8]
+
+unset colorbox
+
+set grid ytics lt 1 lw 1 lc rgb "#bbbbbb"
+set grid xtics lt 1 lw 1 lc rgb "#bbbbbb"
+set key top right
+set key box width 1 height 1 opaque
+set key font "Arial,13"
+set tics font "Arial,13"
+set ylabel "Parasitic Energy (10^3 kJ/kg_{CO_2})" offset 1,0,0
+set xlabel font "Arial,13" 
+set xlabel "Working Capacity (mol/kg_{MOF})"
+set ylabel font "Arial,13" 
+
+
+plot 'evaluation.dat' u 2:($1)/1000 with points pt 7 lt 8 ps 2 t 'Other MOFs', '' u 2:($1)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 4:($3)/1000 with points pt 7 lt 2 ps 2 t 'Formic acid', '' u 4:($3)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 6:($5)/1000 with points pt 7 lt 3 ps 2 t 'BTC linker', '' u 6:($5)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 8:($7)/1000 with points pt 7 lt 4 ps 2 t '2,6-NDC', '' u 8:($7)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 10:($9)/1000 with points pt 7 lt 5 ps 2 t 'BDC linker', '' u 10:($9)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 12:($11)/1000 with points pt 7 lt 6 ps 2 t 'ZIFs', '' u 12:($11)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 14:($13)/1000 with points pt 7 lt 7 ps 2 t 'MOF-74', '' u 14:($13)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 16:($15)/1000 with points pt 7 lt 9 ps 2 t 'SIFSIX-3', '' u 16:($15)/1000 with points pt 6 ps 2 lt 8 notitle,\
+1.06 t 'MEA solution' lc 8 dt '.' lw 2
+######################################
+reset
+
+set yrange[*:*]
+set xrange[*:*]
+
+unset colorbox
+
+set grid ytics lt 1 lw 1 lc rgb "#bbbbbb"
+set grid xtics lt 1 lw 1 lc rgb "#bbbbbb"
+set key top right
+set key box width 1 height 1 opaque
+set key font "Arial,13"
+unset key
+set tics font "Arial,13"
+set ylabel "Parasitic Energy (10^3 kJ/kg_{CO_2})" offset 1,0,0
+set xlabel font "Arial,13" 
+set xlabel "Henry Coefficient CO_2 at 300K (mol/kg/Pa)"
+set ylabel font "Arial,13" 
+set logscale x 10
+
+plot 'evalution(2).dat' u 2:($1)/1000 with points pt 7 lt 8 ps 2 t 'Other MOFs', '' u 2:($1)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 4:($3)/1000 with points pt 7 lt 2 ps 2 t 'Formic acid', '' u 4:($3)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 6:($5)/1000 with points pt 7 lt 3 ps 2 t 'BTC linker', '' u 6:($5)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 8:($7)/1000 with points pt 7 lt 4 ps 2 t '2,6-NDC', '' u 8:($7)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 10:($9)/1000 with points pt 7 lt 5 ps 2 t 'BDC linker', '' u 10:($9)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 12:($11)/1000 with points pt 7 lt 6 ps 2 t 'ZIFs', '' u 12:($11)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 14:($13)/1000 with points pt 7 lt 7 ps 2 t 'MOF-74', '' u 14:($13)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 16:($15)/1000 with points pt 7 lt 9 ps 2 t 'SIFSIX-3', '' u 16:($15)/1000 with points pt 6 ps 2 lt 8 notitle,\
+1.06 t 'MEA solution' lc 8 dt '.' lw 2
+######################################
+reset
+
+set yrange[*:*]
+set xrange[*:*]
+
+unset colorbox
+set grid ytics lt 1 lw 1 lc rgb "#bbbbbb"
+set grid xtics lt 1 lw 1 lc rgb "#bbbbbb"
+set key top right
+set key box width 1 height 1 opaque
+set key font "Arial,13"
+unset key
+set tics font "Arial,13"
+set ylabel "Parasitic Energy (10^3 kJ/kg_{CO_2})" offset 1,0,0
+set xlabel font "Arial,13" 
+set xlabel "CO_2 Selectivity"
+set ylabel font "Arial,13" 
+set logscale x 10
+
+plot 'evaluation(3).dat' u 2:($1)/1000 with points pt 7 lt 8 ps 2 t 'Other MOFs', '' u 2:($1)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 4:($3)/1000 with points pt 7 lt 2 ps 2 t 'Formic acid', '' u 4:($3)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 6:($5)/1000 with points pt 7 lt 3 ps 2 t 'BTC linker', '' u 6:($5)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 8:($7)/1000 with points pt 7 lt 4 ps 2 t '2,6-NDC', '' u 8:($7)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 10:($9)/1000 with points pt 7 lt 5 ps 2 t 'BDC linker', '' u 10:($9)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 12:($11)/1000 with points pt 7 lt 6 ps 2 t 'ZIFs', '' u 12:($11)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 14:($13)/1000 with points pt 7 lt 7 ps 2 t 'MOF-74', '' u 14:($13)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 16:($15)/1000 with points pt 7 lt 9 ps 2 t 'SIFSIX-3', '' u 16:($15)/1000 with points pt 6 ps 2 lt 8 notitle,\
+1.06 t 'MEA solution' lc 8 dt '.' lw 2
+######################################
+reset
+
+set yrange[*:*]
+set xrange[-50:-10]
+set grid ytics lt 1 lw 1 lc rgb "#bbbbbb"
+set grid xtics lt 1 lw 1 lc rgb "#bbbbbb"
+unset colorbox
+
+set key top left
+set key box width 1 height 1 opaque
+set key font "Arial,13"
+unset key
+set tics font "Arial,13"
+set ylabel "Parasitic Energy (10^3 kJ/kg_{CO_2})" offset 1,0,0
+set xlabel font "Arial,13" 
+set xlabel "CO_2 Heat of Adsorption (kJ/mol)"
+set ylabel font "Arial,13" 
+#set logscale x 10
+
+plot 'evaluation(4).dat' u 2:($1)/1000 with points pt 7 lt 8 ps 2 t 'Other MOFs', '' u 2:($1)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 4:($3)/1000 with points pt 7 lt 2 ps 2 t 'Formic acid', '' u 4:($3)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 6:($5)/1000 with points pt 7 lt 3 ps 2 t 'BTC linker', '' u 6:($5)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 8:($7)/1000 with points pt 7 lt 4 ps 2 t '2,6-NDC', '' u 8:($7)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 10:($9)/1000 with points pt 7 lt 5 ps 2 t 'BDC linker', '' u 10:($9)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 12:($11)/1000 with points pt 7 lt 6 ps 2 t 'ZIFs', '' u 12:($11)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 14:($13)/1000 with points pt 7 lt 7 ps 2 t 'MOF-74', '' u 14:($13)/1000 with points pt 6 ps 2 lt 8 notitle,\
+'' u 16:($15)/1000 with points pt 7 lt 9 ps 2 t 'SIFSIX-3', '' u 16:($15)/1000 with points pt 6 ps 2 lt 8 notitle,\
+1.06 t 'MEA solution' lc 8 dt '.' lw 2
